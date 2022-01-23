@@ -19,9 +19,7 @@ def stations_by_river(stations):
     rivers = rivers_with_station(stations)
     river_dictionary = {}
     for river in rivers:
-        for station in stations:
-            if station.river in river_dictionary:
-                river_dictionary[river] = river_dictionary[river] + [station]
-            else:
-                river_dictionary[river] = [station]
+        river_dictionary[river] = []
+    for station in stations:
+        river_dictionary[station.river].append(station.name)
     return river_dictionary
