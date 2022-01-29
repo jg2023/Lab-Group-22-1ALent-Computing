@@ -28,6 +28,7 @@ class MonitoringStation:
         self.town = town
         self.average_value = (self.typical_range[1] + self.typical_range[0])/2  # I put this in so there is a easier way of doing EX 2E
         self.latest_level = None
+        self.level_history = None
 
     def __repr__(self):
         d = "Station name:     {}\n".format(self.name)
