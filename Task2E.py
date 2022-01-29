@@ -8,7 +8,7 @@ stations = build_station_list()
 
 
 
-"""
+
 topTenStations = []
 for station in tqdm(stations, desc = "Loading: "):
     dt = 2
@@ -40,9 +40,9 @@ for station in tqdm(stations, desc = "Loading: "):
             topTenStations.pop(len(topTenStations)-1)
 
 for station in topTenStations:
-    plot.plot_water_levels(station[0],stations[1],station[2])
-    """
+    plot_water_levels(station[0],station[1],station[2])
+"""   
 station = stations[0]
 dt = 2
 dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
-plot_water_levels(station,dates,levels)
+plot_water_levels(station,dates,levels)"""
