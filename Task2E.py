@@ -11,7 +11,7 @@ stations = build_station_list()
 
 topTenStations = []
 for station in tqdm(stations, desc = "Loading: "):
-    dt = 2
+    dt = 10
     dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
     
     count = 0
