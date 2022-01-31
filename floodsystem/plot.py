@@ -10,10 +10,10 @@ def plot_water_levels(station,dates,levels,poly = None):
     for i in levels:
         average+= i
     average = average/len(levels)
-    plt.axhline(average,color = 'b', label = 'Mean recent water level')
+    #plt.axhline(average,color = 'b', label = 'Mean recent water level')
     plt.plot(dates,levels, label = 'Water Level Against Time')
     if poly != None:
-        plt.plot(dates,poly,label = "Best Fit Polynomial")
+        plt.plot(poly,label = "Best Fit Polynomial")
     plt.xlabel('date')
     plt.ylabel('water level (m)')
     plt.xticks(rotation=11)
