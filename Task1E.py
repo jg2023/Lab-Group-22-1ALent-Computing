@@ -5,5 +5,5 @@ def run():
     stations = stationdata.build_station_list()
     print(geo.rivers_by_station_number(stations,9))
 
-if __name == '__main__':
+if __name__ == '__main__':
     run()

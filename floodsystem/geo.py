@@ -23,9 +23,9 @@ def stations_by_river(stations):
     rivers = rivers_with_station(stations)
     river_dictionary = {}
     for river in rivers:
-        river_dictionary[river] = [] #Generating Dictionary
+        river_dictionary[river] = [] #Generating Empty Dictionary with all river names
     for station in stations:
-        river_dictionary[station.river].append(station.name) #Assigning values
+        river_dictionary[station.river].append(station) #Assigning values to each specific river
     return river_dictionary
 
 def rivers_by_station_number(stations,N):
@@ -36,7 +36,7 @@ def rivers_by_station_number(stations,N):
     riverStationCount = []
     for river in riverList:
         riverStationCount.append((river,len(riverList[river]))) 
-    riverStationCount = sorted_by_key(riverStationCount,1,True)
+    riverStationCount = sorted_by_key(riverStationCount,1,True) #RiverStation count is a list of tuples
     if N>0 and N <= len(riverStationCount): #Error Handling
         outputList = riverStationCount[0:N]
         count = 0
@@ -45,4 +45,4 @@ def rivers_by_station_number(stations,N):
                 outputList.append(riverStationCount[N+count])
                 count +=1
         return outputList
-    return None
+    return riverStationCount #If N is not valid the whole list will be returned
