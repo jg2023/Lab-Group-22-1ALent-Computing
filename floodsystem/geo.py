@@ -6,7 +6,7 @@ geographical data.
 
 """
 
-#from .utils import sorted_by_key  # noqa
+from .utils import sorted_by_key  # noqa
 
 def rivers_with_station(stations):
     """This function creates a set containing all the river names which have a station on it. 
@@ -36,8 +36,7 @@ def rivers_by_station_number(stations,N):
     riverStationCount = []
     for river in riverList:
         riverStationCount.append((river,len(riverList[river]))) 
-    riverStationCount.sort(key = lambda x:x[1])#Sort into lowest to highest
-    riverStationCount.reverse() #Reverse to highest to lowest
+    riverStationCount = sorted_by_key(riverStationCount,1,True)
     if N>0 and N <= len(riverStationCount): #Error Handling
         outputList = riverStationCount[0:N]
         count = 0
