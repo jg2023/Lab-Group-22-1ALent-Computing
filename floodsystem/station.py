@@ -26,8 +26,9 @@ class MonitoringStation:
         self.typical_range = typical_range
         self.river = river
         self.town = town
-
+        self.average_value = (self.typical_range[1] + self.typical_range[0])/2  # I put this in so there is a easier way of doing EX 2E
         self.latest_level = None
+        self.level_history = None
 
     def __repr__(self):
         d = "Station name:     {}\n".format(self.name)
@@ -36,7 +37,8 @@ class MonitoringStation:
         d += "   coordinate:    {}\n".format(self.coord)
         d += "   town:          {}\n".format(self.town)
         d += "   river:         {}\n".format(self.river)
-        d += "   typical range: {}".format(self.typical_range)
+        d += "   typical range: {}\n".format(self.typical_range)
+        d += "   average value: {}".format(self.average_value)
         return d
 
     def typical_range_consistent(self):
